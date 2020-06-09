@@ -1,0 +1,23 @@
+[package]
+name = "zpass"
+version = "0.1.0"
+authors = ["enchanted-engineering <dev@enchanted.engineering>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# For encryption, passwords and secrets
+rand = "0.7.3"
+aes = "0.3.2"
+block-modes = "0.3.3"
+sha3 = "0.8.2"
+# To copy the password into the clipboard
+clipboard = "0.5.0"
+# For serialization and deserialization of the vaults
+serde = { version = "1.0.110", features = ["derive"] }
+serde_json = "1.0"
+# To read in the password
+rpassword = "4.0.5"
+# CLI parser
+pom = "3.1.0"
