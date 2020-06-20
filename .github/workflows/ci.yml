@@ -16,6 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: dependencies
+      # Found the missing dependencies `libxcb-shape0-dev`, and `libxcb-xfixes0-dev` here:
+      # https://github.com/amethyst/amethyst/issues/1471#issue-419990927
+      # In a solution by https://github.com/sunreef
+      run: sudo apt-get install libxcb-shape0-dev libxcb-xfixes0-dev
     - name: Build
       run: cargo build --verbose
     - name: Run tests
